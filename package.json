@@ -32,7 +32,7 @@
     "typescript": "3.6.4"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
+    "*.{js,jsx,ts}": [
       "eslint -c .eslintrc.js --fix",
       "git add"
     ],
