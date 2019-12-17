@@ -1,23 +1,22 @@
 {
-  "name": "@gqli/cli",
-  "version": "\t1.0.0",
-  "author": "tyler-churchill @Landuck",
+  "name": "@namespace/gqli",
+  "version": "1.0.0",
+  "author": "Tyler Churchill @Landuck",
   "bin": {
     "gqli": "./bin/run"
   },
-  "bugs": "https://github.com/Landuck/cli/issues",
+  "bugs": "https://github.com/Landuck/gqli/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "node-notifier": "^6.0.0",
     "tslib": "^1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
     "@types/node": "^10",
-    "eslint": "^5.13",
-    "eslint-config-oclif": "^3.1",
-    "eslint-config-oclif-typescript": "^0.1",
+    "@types/node-notifier": "^5.4.0",
     "globby": "^10",
     "rimraf": "^3.0.0",
     "ts-node": "^8",
@@ -32,7 +31,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/Landuck/cli",
+  "homepage": "https://github.com/Landuck/gqli",
   "keywords": [
     "oclif"
   ],
@@ -45,13 +44,13 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "Landuck/cli",
+  "repository": "Landuck/gqli",
   "scripts": {
     "postpack": "rimraf oclif.manifest.json",
-    "posttest": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && git add README.md",
+    "postinstall": "yarn link"
   },
   "types": "lib/index.d.ts"
 }

@@ -8,6 +8,6 @@
     "strict": true,
     "target": "es2017"
   },
-  "extends": "../../tsconfig.json",
-  "include": ["src"]
+  "include": ["src/**/*"],
+  "extends": "../../tsconfig.json"
 }
