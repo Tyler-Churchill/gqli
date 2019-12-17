@@ -1,5 +1,5 @@
 {
-  "name": "@gqli/gqli",
+  "name": "@gqli/cli",
   "version": "1.0.0",
   "author": "Tyler Churchill @Landuck",
   "bin": {
