@@ -1,0 +1,57 @@
+{
+  "name": "@gqli/gqli",
+  "version": "1.0.0",
+  "author": "Tyler Churchill @Landuck",
+  "bin": {
+    "gqli": "./bin/run"
+  },
+  "bugs": "https://github.com/Landuck/gqli/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "node-notifier": "^6.0.0",
+    "nunjucks": "^3.2.0",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@types/node": "^10",
+    "@types/node-notifier": "^5.4.0",
+    "globby": "^10",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8",
+    "typescript": "^3.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/Landuck/gqli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "gqli",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "Landuck/gqli",
+  "scripts": {
+    "postpack": "rimraf oclif.manifest.json",
+    "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md",
+    "postinstall": "yarn link"
+  },
+  "types": "lib/index.d.ts"
+}

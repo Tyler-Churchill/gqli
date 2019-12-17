@@ -1,5 +1,5 @@
 {
-  "name": "namespace",
+  "name": "gqli",
   "private": true,
   "workspaces": [
     "packages/*"
