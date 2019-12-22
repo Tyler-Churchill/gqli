@@ -1,7 +1,7 @@
-import GCommand from '../GCommand'
+import GCommand from '../GCommand';
 
 export default class Run extends GCommand {
-  static description = 'describe the command here';
+  static description = 'Runs the given project for development';
 
   static examples = [];
 
@@ -9,7 +9,7 @@ export default class Run extends GCommand {
 
   static args = [];
 
-  async run () {
-    this.cmd('yarn lerna run --parallel start:example')
+  async run() {
+    this.cmd('ts-node ./src/index.ts');
   }
 }

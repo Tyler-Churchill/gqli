@@ -1,10 +1,13 @@
 {
-  "name": "@namespace/examples",
-  "version": "1.0.0",
+  "name": "@gqli/examples",
+  "version": "0.0.1",
   "author": "Tyler Churchill @Landuck",
-  "dependencies": {},
+  "main": "src/",
+  "dependencies": {
+    "@gqli/server": "0.0.1"
+  },
   "devDependencies": {
-    "typescript": "^3.3"
+    "typescript": "3.7.4"
   },
   "engines": {
     "node": ">=12.0.0"
@@ -13,6 +16,6 @@
   "license": "MIT",
   "repository": "Landuck/gqli",
   "scripts": {
-    "start:example": "ts-node src/getting-started/index.ts --inspect=0.0.0.0"
+    "start:basic": "ts-node src/basic/index.ts --inspect=0.0.0.0"
   }
 }

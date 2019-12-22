@@ -1,7 +1,7 @@
 {
-  "name": "@namespace/lib",
-  "version": "1.0.0",
-  "author": "Tyler Churchill @Landuck",
+  "name": "@gqli/server",
+  "version": "0.0.1",
+  "author": "Tyler Churchill @_TylerChurchill",
   "main": "src/",
   "bugs": "https://github.com/Landuck/gqli/issues",
   "dependencies": {
@@ -9,18 +9,20 @@
     "express": "^4.17.1",
     "graphql": "^14.5.8",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "^0.17.5"
+    "type-graphql": "^0.17.5",
+    "@gqli/lib": "0.0.1",
+    "@gqli/module-base": "0.0.1"
   },
   "devDependencies": {
     "@types/express": "^4.17.2",
-    "typescript": "^3.3"
+    "typescript": "3.7.4"
   },
   "engines": {
     "node": ">=12.0.0"
   },
-  "homepage": "https://github.com/Landuck/gqli",
+  "homepage": "https://github.com/Tyler-Churchill/gqli",
   "license": "MIT",
-  "repository": "Landuck/gqli",
+  "repository": "https://github.com/Tyler-Churchill/gqli",
   "scripts": {
     "start:local": "ts-node src/tests/index.ts --inspect=0.0.0.0"
   }

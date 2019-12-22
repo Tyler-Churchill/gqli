@@ -1,0 +1,13 @@
+{
+  "name": "@gqli/module-base",
+  "version": "0.0.1",
+  "author": "Tyler Churchill @_TylerChurchill",
+  "main": "src/",
+  "dependencies": {
+    "@gqli/lib": "0.0.1",
+    "typescript": "3.7.4",
+    "graphql": "^14.5.8",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^0.17.5"
+  }
+}
