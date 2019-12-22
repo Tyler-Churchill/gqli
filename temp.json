@@ -1,0 +1,12 @@
+{
+  "lint-staged": {
+    "*.{js,jsx,ts}": ["eslint -c .eslintrc.js --fix", "git add"],
+    "*.{md,css,scss,yaml,yml}": ["prettier --write", "git add"]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
