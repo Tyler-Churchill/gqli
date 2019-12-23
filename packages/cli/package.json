@@ -1,6 +1,6 @@
 {
   "name": "@gqli/cli",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Tyler Churchill @Landuck",
   "bin": {
     "gqli": "./bin/run"
@@ -10,8 +10,10 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "@types/recursive-readdir": "^2.2.0",
     "node-notifier": "^6.0.0",
     "nunjucks": "^3.2.0",
+    "recursive-readdir": "^2.2.2",
     "tslib": "^1"
   },
   "devDependencies": {
@@ -25,7 +27,7 @@
     "typescript": "3.7.4"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=10.0.0"
   },
   "files": [
     "/bin",

@@ -16,7 +16,7 @@
     "typescript": "3.7.4"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=10.0.0"
   },
   "homepage": "https://github.com/Landuck/gqli",
   "license": "MIT",

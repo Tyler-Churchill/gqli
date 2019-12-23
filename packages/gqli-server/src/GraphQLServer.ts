@@ -76,7 +76,6 @@ export class GraphQLServer {
     if (!this.modules?.length) {
       GQLIError('No modules loaded, did you forget to call `server.add()`?');
     }
-    console.log(this.modules);
     const { resolvers } = await this.loadModules(this.modules);
 
     // build schema
