@@ -1,0 +1,27 @@
+{
+  "name": "@gqli/tests",
+  "version": "0.0.1",
+  "author": "Tyler Churchill @Landuck",
+  "main": "src/",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@gqli/server": "0.0.1",
+    "@types/jest": "^24.0.24",
+    "apollo": "^2.21.2",
+    "apollo-server-testing": "^2.9.14",
+    "graphql-tag": "^2.10.1",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
+    "typescript": "3.7.4"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "homepage": "https://github.com/Landuck/gqli",
+  "license": "MIT",
+  "repository": "Landuck/gqli",
+  "scripts": {
+    "test": "jest --detectOpenHandles"
+  }
+}

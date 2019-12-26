@@ -8,21 +8,43 @@ import { Module, ModuleExport, GQLIError } from '@gqli/lib';
 import { Server } from 'http';
 import { BaseModule } from '@gqli/module-base';
 
+type GraphQLServerOptions = {
+  port?: number;
+  useDefaultModules?: boolean;
+};
+
 /**
- * GraphQL server powered by Express and Apollo
+ * GraphQL server powered by Express and Apollo,
+ * can be extended in the future as an interface
+ * to implement other server configs
  */
 export class GraphQLServer {
+  options!: GraphQLServerOptions;
   express: express.Application;
-  server!: ApolloServer;
+  server!: any;
   schema!: GraphQLSchema;
   modules!: Array<Module>;
   http?: Server;
 
-  constructor() {
+  constructor(
+    options: GraphQLServerOptions = {
+      port: 9000,
+      useDefaultModules: true,
+    },
+  ) {
+    this.options = options;
     // create an express app
     this.express = express();
     // load default modules
-    this.modules = [new BaseModule()];
+    if (this.options.useDefaultModules) {
+      this.modules = [new BaseModule()];
+    } else {
+      this.modules = [];
+    }
+  }
+
+  public get apollo(): any {
+    return this.server;
   }
 
   /**
@@ -74,7 +96,7 @@ export class GraphQLServer {
    */
   public async start() {
     if (!this.modules?.length) {
-      GQLIError('No modules loaded, did you forget to call `server.add()`?');
+      GQLIError('No modules loaded, did you forget to call `server.use()`?');
     }
     const { resolvers } = await this.loadModules(this.modules);
 
@@ -93,16 +115,16 @@ export class GraphQLServer {
     // inject express into apollos request middleware
     this.server.applyMiddleware({ app: this.express });
 
-    this.http = await this.express.listen({ port: 9005 }, () =>
-      console.log(
-        `🚀 Server ready at http://localhost:9005${this.server.graphqlPath}`,
-      ),
+    this.http = await this.express.listen({ port: this.options.port });
+    console.log(
+      `GQLI Server ready at http://localhost:${this.options.port}${this.server.graphqlPath}`,
     );
     process.on('SIGTERM', () => {
-      this.http &&
-        this.http.close(() => {
-          process.exit(0);
-        });
+      this.http && this.shutdown() && process.exit(0);
     });
+  }
+
+  public async shutdown() {
+    this.http?.close();
   }
 }
