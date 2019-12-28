@@ -1,0 +1,16 @@
+17 error Error: Command failed: git remote update
+17 error fatal: HttpRequestException encountered.
+17 error    An error occurred while sending the request.
+17 error bash: /dev/tty: No such device or address
+17 error error: failed to execute prompt script (exit code 1)
+17 error fatal: could not read Username for 'https://github.com': No error
+17 error error: Could not fetch origin
+17 error
+17 error Fetching origin
+17 error
+17 error     at makeError (C:\Users\Tyler\Desktop\gqli\node_modules\execa\index.js:174:9)
+17 error     at Function.module.exports.sync (C:\Users\Tyler\Desktop\gqli\node_modules\execa\index.js:338:15)
+17 error     at Object.execSync (C:\Users\Tyler\Desktop\gqli\node_modules\@lerna\child-process\index.js:26:16)
+17 error     at updateRemote (C:\Users\Tyler\Desktop\gqli\node_modules\@lerna\version\lib\is-behind-upstream.js:26:16)
+17 error     at isBehindUpstream (C:\Users\Tyler\Desktop\gqli\node_modules\@lerna\version\lib\is-behind-upstream.js:11:3)
+17 error     at VersionCommand.initialize (C:\Users\Tyler\Desktop\gqli\node_modules\@lerna\version\index.js:150:9)
