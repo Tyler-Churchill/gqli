@@ -1,11 +1,11 @@
 {
   "name": "@gqli/tests",
-  "version": "0.0.3-alpha.0",
+  "version": "0.0.4-alpha.0",
   "author": "Tyler Churchill @Landuck",
   "main": "src/",
   "private": true,
   "devDependencies": {
-    "@gqli/server": "^0.0.3-alpha.0",
+    "@gqli/server": "^0.0.4-alpha.0",
     "@types/jest": "^24.0.24",
     "apollo": "^2.21.2",
     "apollo-server-testing": "^2.9.14",

@@ -23,7 +23,7 @@ $ npm install -g @gqli/cli
 $ gqli COMMAND
 running command...
 $ gqli (-v|--version|version)
-@gqli/cli/0.0.3-alpha.0 win32-x64 node-v12.13.1
+@gqli/cli/0.0.4-alpha.0 win32-x64 node-v12.13.1
 $ gqli --help [COMMAND]
 USAGE
   $ gqli COMMAND
@@ -64,7 +64,7 @@ EXAMPLE
   $ gqli create:new ./project/
 ```
 
-_See code: [src\commands\create\new.ts](https://github.com/Landuck/gqli/blob/v0.0.3-alpha.0/src\commands\create\new.ts)_
+_See code: [src\commands\create\new.ts](https://github.com/Landuck/gqli/blob/v0.0.4-alpha.0/src\commands\create\new.ts)_
 
 ## `gqli develop`
 
@@ -75,7 +75,7 @@ USAGE
   $ gqli develop
 ```
 
-_See code: [src\commands\develop.ts](https://github.com/Landuck/gqli/blob/v0.0.3-alpha.0/src\commands\develop.ts)_
+_See code: [src\commands\develop.ts](https://github.com/Landuck/gqli/blob/v0.0.4-alpha.0/src\commands\develop.ts)_
 
 ## `gqli help [COMMAND]`
 
