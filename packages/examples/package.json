@@ -1,21 +1,22 @@
 {
-  "name": "@gqli/examples",
-  "version": "0.0.1",
-  "author": "Tyler Churchill @Landuck",
-  "main": "src/",
-  "dependencies": {
-    "@gqli/server": "0.0.1"
-  },
-  "devDependencies": {
-    "typescript": "3.7.4"
-  },
-  "engines": {
-    "node": ">=10.0.0"
-  },
-  "homepage": "https://github.com/Landuck/gqli",
-  "license": "MIT",
-  "repository": "Landuck/gqli",
-  "scripts": {
-    "start:basic": "ts-node src/basic/index.ts --inspect=0.0.0.0"
-  }
+    "name": "@gqli/examples",
+    "version": "0.0.1",
+    "private": true,
+    "author": "Tyler Churchill @Landuck",
+    "main": "src/",
+    "dependencies": {
+        "@gqli/server": "0.0.1"
+    },
+    "devDependencies": {
+        "typescript": "3.7.4"
+    },
+    "engines": {
+        "node": ">=10.0.0"
+    },
+    "homepage": "https://github.com/Landuck/gqli",
+    "license": "MIT",
+    "repository": "Landuck/gqli",
+    "scripts": {
+        "start:basic": "ts-node src/basic/index.ts --inspect=0.0.0.0"
+    }
 }
