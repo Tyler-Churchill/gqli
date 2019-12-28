@@ -9,5 +9,6 @@
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^0.17.5",
     "typescript": "3.7.4"
-  }
+  },
+  "gitHead": "9622d88d065b22599845de9855e875bf6a56319b"
 }

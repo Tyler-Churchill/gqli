@@ -23,5 +23,6 @@
   "repository": "Landuck/gqli",
   "scripts": {
     "start:local": "ts-node src/tests/index.ts --inspect=0.0.0.0"
-  }
+  },
+  "gitHead": "9622d88d065b22599845de9855e875bf6a56319b"
 }

@@ -55,5 +55,6 @@
     "version": "oclif-dev readme && git add README.md",
     "postinstall": "yarn link"
   },
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "gitHead": "9622d88d065b22599845de9855e875bf6a56319b"
 }
