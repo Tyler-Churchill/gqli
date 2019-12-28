@@ -10,17 +10,20 @@ class ModuleBaseResolver {
   }
 }
 
+/**
+ * Base module which outputs the current version of gqli installed 
+ */
 export class BaseModule extends Module {
   constructor() {
     super();
     this.name = module.name;
   }
-
+  w
   dependencies() {
     return [];
   }
 
-  async onInstall() {}
+  async onInstall() { }
 
   export() {
     return {

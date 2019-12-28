@@ -24,5 +24,5 @@
   "scripts": {
     "start:local": "ts-node src/tests/index.ts --inspect=0.0.0.0"
   },
-  "gitHead": "93152dbfb49fbbd3a3e04ada52f6f312710d6ec7"
+  "gitHead": "69b46340d073366d7fbecd63a9b26bd9e1566a9f"
 }

@@ -15,16 +15,25 @@ export default class New extends GQLICommand {
 
   static flags = {};
 
-  static args = [];
+  static args = [
+    {
+      name: "path",
+      required: false,
+      description: 'relative path to create the new project in',
+      default: "./"
+    }
+  ];
 
   /*
    * Creates a new project at the specified directory
    */
   async run() {
+    const { args } = this.parse(New)
+    const userPath = args?.path;
     console.log(this.log("Let's get started!"));
     const name = await cli.prompt('What is your project name?');
     // render the project to the specified directory
-    const outputPath = path.resolve(process.cwd(), name);
+    const outputPath = path.resolve(process.cwd(), userPath);
     await this.renderProject(
       {
         projectPath: path.resolve(__dirname, '_project_'),

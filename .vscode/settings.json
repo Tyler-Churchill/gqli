@@ -2,15 +2,14 @@
 {
   "editor.formatOnSave": true,
   "files.eol": "\n",
-  "editor.fontSize": 13,
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "all",
+  "editor.fontSize": 16,
   "javascript.preferences.quoteStyle": "single",
   "editor.tabSize": 2,
-  "editor.rulers": [110],
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
+  "editor.rulers": [
+    110
+  ],
   "editor.wordWrapColumn": 110,
+  "files.autoSave": "onFocusChange",
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
