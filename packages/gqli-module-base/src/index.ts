@@ -18,7 +18,7 @@ export class BaseModule extends Module {
     super();
     this.name = module.name;
   }
-  w
+
   dependencies() {
     return [];
   }
