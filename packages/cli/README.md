@@ -83,7 +83,7 @@ EXAMPLE
   $ gqli create:new ./project/
 ```
 
-_See code: [src\commands\create\new.ts](https://github.com/Landuck/gqli/blob/v0.0.4-alpha.0/src\commands\create\new.ts)_
+_See code: [src\commands\create\new.ts](https://github.com/Tyler-Churchill/gqli/blob/v0.0.4-alpha.0/src\commands\create\new.ts)_
 
 ## `gqli develop`
 
@@ -94,7 +94,7 @@ USAGE
   $ gqli develop
 ```
 
-_See code: [src\commands\develop.ts](https://github.com/Landuck/gqli/blob/v0.0.4-alpha.0/src\commands\develop.ts)_
+_See code: [src\commands\develop.ts](https://github.com/Tyler-Churchill/gqli/blob/v0.0.4-alpha.0/src\commands\develop.ts)_
 
 ## `gqli help [COMMAND]`
 

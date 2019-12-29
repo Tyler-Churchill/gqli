@@ -24,5 +24,8 @@
   "scripts": {
     "start:local": "ts-node src/tests/index.ts --inspect=0.0.0.0"
   },
-  "gitHead": "8e6be5b9af598c9d0cecbe52f24a791b4d5a9fe6"
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "93485588096c900b2067f4eba7cf1d26a68b588d"
 }
