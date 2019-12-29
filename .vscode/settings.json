@@ -2,12 +2,10 @@
 {
   "editor.formatOnSave": true,
   "files.eol": "\n",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   "javascript.preferences.quoteStyle": "single",
   "editor.tabSize": 2,
-  "editor.rulers": [
-    110
-  ],
+  "editor.rulers": [110],
   "editor.wordWrapColumn": 110,
   "files.autoSave": "onFocusChange",
   "files.exclude": {

@@ -1,6 +1,0 @@
-import { GraphQLServer } from '@gqli/server';
-
-(async () => {
-  const server = new GraphQLServer();
-  await server.start();
-})();
