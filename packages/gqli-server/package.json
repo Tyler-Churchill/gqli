@@ -1,6 +1,7 @@
 {
   "name": "@gqli/server",
   "version": "0.0.4-alpha.0",
+  "private": false,
   "author": "Tyler Churchill @_TylerChurchill",
   "main": "src/",
   "bugs": "https://github.com/Landuck/gqli/issues",
@@ -26,5 +27,5 @@
   "scripts": {
     "start:local": "ts-node src/tests/index.ts --inspect=0.0.0.0"
   },
-  "gitHead": "bc7d4c81f8857716fe4f4c225b308451de9c3040"
+  "gitHead": "8e6be5b9af598c9d0cecbe52f24a791b4d5a9fe6"
 }

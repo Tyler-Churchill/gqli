@@ -1,6 +1,7 @@
 {
   "name": "@gqli/module-base",
   "version": "0.0.4-alpha.0",
+  "private": false,
   "author": "Tyler Churchill @_TylerChurchill",
   "main": "src/",
   "dependencies": {
@@ -10,5 +11,5 @@
     "type-graphql": "^0.17.5",
     "typescript": "3.7.4"
   },
-  "gitHead": "bc7d4c81f8857716fe4f4c225b308451de9c3040"
+  "gitHead": "8e6be5b9af598c9d0cecbe52f24a791b4d5a9fe6"
 }

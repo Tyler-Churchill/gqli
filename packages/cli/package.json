@@ -1,6 +1,7 @@
 {
   "name": "@gqli/cli",
   "version": "0.0.4-alpha.0",
+  "private": false,
   "author": "Tyler Churchill @_TylerChurchill",
   "bin": {
     "gqli": "./bin/run"
@@ -48,7 +49,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "Landuck/gqli",
+  "repository": "https://github.com/Tyler-Churchill/gqli",
   "scripts": {
     "postpack": "rimraf oclif.manifest.json",
     "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
@@ -56,5 +57,5 @@
     "postinstall": "yarn link"
   },
   "types": "lib/index.d.ts",
-  "gitHead": "bc7d4c81f8857716fe4f4c225b308451de9c3040"
+  "gitHead": "8e6be5b9af598c9d0cecbe52f24a791b4d5a9fe6"
 }
