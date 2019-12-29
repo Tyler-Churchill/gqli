@@ -1,7 +1,7 @@
 {
   "name": "@gqli/tests",
   "version": "0.0.4-alpha.0",
-  "author": "Tyler Churchill @Landuck",
+  "author": "Tyler Churchill @_TylerChurchill",
   "main": "src/",
   "private": true,
   "devDependencies": {
@@ -17,7 +17,7 @@
   "engines": {
     "node": ">=10.0.0"
   },
-  "homepage": "https://github.com/Landuck/gqli",
+  "homepage": "https://github.com/Tyler-Churchill/gqli",
   "license": "MIT",
   "repository": "Landuck/gqli",
   "scripts": {

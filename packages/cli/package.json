@@ -1,11 +1,11 @@
 {
   "name": "@gqli/cli",
   "version": "0.0.4-alpha.0",
-  "author": "Tyler Churchill @Landuck",
+  "author": "Tyler Churchill @_TylerChurchill",
   "bin": {
     "gqli": "./bin/run"
   },
-  "bugs": "https://github.com/Landuck/gqli/issues",
+  "bugs": "https://github.com/Tyler-Churchill/gqli",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -35,7 +35,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/Landuck/gqli",
+  "homepage": "https://github.com/Tyler-Churchill/gqli",
   "keywords": [
     "oclif"
   ],
@@ -56,5 +56,5 @@
     "postinstall": "yarn link"
   },
   "types": "lib/index.d.ts",
-  "gitHead": "69b46340d073366d7fbecd63a9b26bd9e1566a9f"
+  "gitHead": "bc7d4c81f8857716fe4f4c225b308451de9c3040"
 }

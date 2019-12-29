@@ -1,6 +1,6 @@
 {
   "name": "gqli",
-  "private": true,
+  "private": false,
   "workspaces": [
     "packages/*"
   ],
