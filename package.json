@@ -38,8 +38,7 @@
       "prettier --write"
     ],
     "*.{md,css,scss,yaml,yml}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "husky": {
