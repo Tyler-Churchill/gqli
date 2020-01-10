@@ -1,8 +1,8 @@
-import { createTestClient } from 'apollo-server-testing';
-import { GraphQLServer } from '@gqli/server';
-import gql from 'graphql-tag';
+import { createTestClient } from "apollo-server-testing";
+import { GraphQLServer } from "@gqli/server";
+import gql from "graphql-tag";
 
-test('server boots', async () => {
+test("server boots", async () => {
   const server = new GraphQLServer();
   await server.start();
   const { query } = createTestClient(server.apollo);
@@ -12,7 +12,7 @@ test('server boots', async () => {
     }
   `;
   const res = await query({
-    query: VERSION_QUERY,
+    query: VERSION_QUERY
   });
   expect(res).toMatchSnapshot();
   await server.shutdown();

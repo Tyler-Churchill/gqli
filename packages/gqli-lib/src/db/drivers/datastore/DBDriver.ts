@@ -1,3 +1,0 @@
-interface DBDriver {
-  name: string;
-}

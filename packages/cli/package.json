@@ -57,8 +57,9 @@
     "postinstall": "yarn link"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "types": "lib/index.d.ts",
-  "gitHead": "93485588096c900b2067f4eba7cf1d26a68b588d"
+  "gitHead": "e4fd12ea6a3ed322f744c1cf473d7103269ce254"
 }

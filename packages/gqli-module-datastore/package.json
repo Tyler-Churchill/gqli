@@ -1,5 +1,5 @@
 {
-  "name": "@gqli/module-base",
+  "name": "@gqli/module-datastore",
   "version": "0.0.4-alpha.0",
   "private": false,
   "author": "Tyler Churchill @_TylerChurchill",
@@ -8,6 +8,7 @@
     "@gqli/lib": "^0.0.4-alpha.0",
     "graphql": "^14.5.8",
     "reflect-metadata": "^0.1.13",
+    "ts-datastore-orm": "^0.1.14",
     "type-graphql": "^0.17.5",
     "typescript": "3.7.4"
   },

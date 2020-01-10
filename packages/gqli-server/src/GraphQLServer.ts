@@ -1,12 +1,16 @@
-import 'reflect-metadata';
-import express from 'express';
-
-import { ApolloServer } from 'apollo-server-express';
-import { buildSchema } from 'type-graphql';
-import { GraphQLSchema } from 'graphql';
-import { Module, ModuleExport, GQLIError } from '@gqli/lib';
-import { Server } from 'http';
-import { BaseModule } from '@gqli/module-base';
+import "reflect-metadata";
+import express from "express";
+import Container, { ContainerInstance } from "typedi";
+import { ApolloServer } from "apollo-server-express";
+import { buildSchema } from "type-graphql";
+import {
+  GraphQLRequestContext,
+  ApolloServerPlugin
+} from "apollo-server-plugin-base";
+import { GraphQLSchema } from "graphql";
+import { Module, ModuleExport, GQLIError, Context } from "@gqli/lib";
+import { Server } from "http";
+import { BaseModule } from "@gqli/module-base";
 
 type GraphQLServerOptions = {
   port?: number;
@@ -19,18 +23,18 @@ type GraphQLServerOptions = {
  * to implement other server configs
  */
 export class GraphQLServer {
-  options!: GraphQLServerOptions;
-  express: express.Application;
-  server!: any;
-  schema!: GraphQLSchema;
-  modules!: Array<Module>;
-  http?: Server;
+  private readonly options!: GraphQLServerOptions;
+  private readonly express: express.Application;
+  private server!: any;
+  private schema!: GraphQLSchema;
+  private readonly modules!: Array<Module>;
+  private http?: Server;
 
   constructor(
     options: GraphQLServerOptions = {
       port: 9000,
-      useDefaultModules: true,
-    },
+      useDefaultModules: true
+    }
   ) {
     this.options = options;
     // create an express app
@@ -60,23 +64,29 @@ export class GraphQLServer {
             modules.push(module);
           } catch (e) {
             console.log(
-              `Cannot find module '${module.name}', did you forget to install it?\nRun: 'yarn|npm install ${module.name}`,
+              `Cannot find module '${module.name}', did you forget to install it?\nRun: 'yarn|npm install ${module.name}`
             );
           }
-        }),
+        })
       );
       const resolvers: Array<Function | string> = this.modules
         .map((module: Module) => module.export().resolvers)
         .flat();
       return {
-        resolvers,
+        resolvers
       };
     } catch (err) {
       return {
-        resolvers: [],
+        resolvers: []
       };
     }
   }
+
+  /**
+   * Load container
+   * @param module
+   * @param modules
+   */
 
   /**
    * Mount a specified Module onto the GraphQLServer
@@ -96,13 +106,13 @@ export class GraphQLServer {
    */
   public async start() {
     if (!this.modules?.length) {
-      GQLIError('No modules loaded, did you forget to call `server.use()`?');
+      GQLIError("No modules loaded, did you forget to call `server.use()`?");
     }
     const { resolvers } = await this.loadModules(this.modules);
 
     // build schema
     this.schema = await buildSchema({
-      resolvers,
+      resolvers
     });
 
     // create an apollo server with the newly created schema
@@ -110,6 +120,29 @@ export class GraphQLServer {
       schema: this.schema,
       introspection: true,
       playground: true,
+      context: (): Context => {
+        const requestId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER); // uuid-like
+        const container = Container.of(requestId); // get scoped container
+        const context = { requestId, container }; // create our context
+        container.set("context", context); // place context or other data in container
+        return context;
+      },
+      plugins: [
+        {
+          requestDidStart: () => ({
+            willSendResponse(requestContext: GraphQLRequestContext<Context>) {
+              // remember to dispose the scoped container to prevent memory leaks
+              Container.reset(requestContext.context.requestId);
+
+              // for developers curiosity purpose, here is the logging of current scoped container instances
+              // we can make multiple parallel requests to see in console how this works
+              const instancesIds = ((Container as any)
+                .instances as ContainerInstance[]).map(instance => instance.id);
+              console.log("instances left in memory:", instancesIds);
+            }
+          })
+        }
+      ] as ApolloServerPlugin[]
     });
 
     // inject express into apollos request middleware
@@ -117,9 +150,9 @@ export class GraphQLServer {
 
     this.http = await this.express.listen({ port: this.options.port });
     console.log(
-      `GQLI Server ready at http://localhost:${this.options.port}${this.server.graphqlPath}`,
+      `GQLI Server ready at http://localhost:${this.options.port}${this.server.graphqlPath}`
     );
-    process.on('SIGTERM', () => {
+    process.on("SIGTERM", () => {
       this.http && this.shutdown() && process.exit(0);
     });
   }

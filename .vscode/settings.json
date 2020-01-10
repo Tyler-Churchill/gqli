@@ -2,7 +2,7 @@
 {
   "editor.formatOnSave": true,
   "files.eol": "\n",
-  "editor.fontSize": 14,
+  "editor.fontSize": 12,
   "javascript.preferences.quoteStyle": "single",
   "editor.tabSize": 2,
   "editor.rulers": [110],

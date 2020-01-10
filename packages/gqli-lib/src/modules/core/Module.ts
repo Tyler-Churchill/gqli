@@ -2,6 +2,10 @@ export type ModuleExport = {
   resolvers: Array<Function | string>;
 };
 
+export type ServiceExport = {
+  services: Array<any>;
+};
+
 export type ModuleDependency = {
   name: string;
   version: string;
@@ -25,15 +29,12 @@ export abstract class Module implements ModuleLifeCycle {
   abstract dependencies(): Array<ModuleDependency>;
 
   abstract export(): ModuleExport;
-}
 
-export class ModuleLoader<T> {
-  // constructor(private context: Object) {}
-  // getInstance(name: string, ...args: any[]): T {
-  //   const instance = Object.create(this.context[name].prototype);
-  //   instance.constructor.apply(instance, args);
-  //   return <T>instance;
-  // }
+  protected services(): ServiceExport {
+    return {
+      services: []
+    };
+  }
 }
 
 export const TModule = typeof Module;
